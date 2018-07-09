@@ -32,10 +32,10 @@ import net.runelite.client.config.ConfigItem;
 public interface RaidsConfig extends Config
 {
 	@ConfigItem(
-		position = 0,
-		keyName = "raidsTimer",
-		name = "Display elapsed raid time",
-		description = "Display elapsed raid time"
+			position = 0,
+			keyName = "raidsTimer",
+			name = "Display elapsed raid time",
+			description = "Display elapsed raid time"
 	)
 	default boolean raidsTimer()
 	{
@@ -43,10 +43,10 @@ public interface RaidsConfig extends Config
 	}
 
 	@ConfigItem(
-		position = 1,
-		keyName = "pointsMessage",
-		name = "Display points in chatbox after raid",
-		description = "Display a message with total points, individual points and percentage at the end of a raid"
+			position = 1,
+			keyName = "pointsMessage",
+			name = "Display points in chatbox after raid",
+			description = "Display a message with total points, individual points and percentage at the end of a raid"
 	)
 	default boolean pointsMessage()
 	{
@@ -57,7 +57,7 @@ public interface RaidsConfig extends Config
 			position = 2,
 			keyName = "pointsPercentage",
 			name = "Display points percentage",
-			description = "Display the points obtained as a percentage of the entire raid points"
+			description = "Display individual point percentage"
 	)
 	default boolean pointsPercentage()
 	{
@@ -65,10 +65,10 @@ public interface RaidsConfig extends Config
 	}
 
 	@ConfigItem(
-		position = 3,
-		keyName = "scoutOverlay",
-		name = "Show scout overlay",
-		description = "Display an overlay that shows the current raid layout (when entering lobby)"
+			position = 3,
+			keyName = "scoutOverlay",
+			name = "Show scout overlay",
+			description = "Display an overlay that shows the current raid layout (when entering lobby)"
 	)
 	default boolean scoutOverlay()
 	{
@@ -76,10 +76,10 @@ public interface RaidsConfig extends Config
 	}
 
 	@ConfigItem(
-		position = 4,
-		keyName = "scoutOverlayAtBank",
-		name = "Show scout overlay outside lobby",
-		description = "Keep the overlay active while at the raids area"
+			position = 4,
+			keyName = "scoutOverlayAtBank",
+			name = "Show scout overlay outside lobby",
+			description = "Keep the overlay active while at the raids area"
 	)
 	default boolean scoutOverlayAtBank()
 	{
@@ -87,10 +87,21 @@ public interface RaidsConfig extends Config
 	}
 
 	@ConfigItem(
-		position = 5,
-		keyName = "whitelistedRooms",
-		name = "Whitelisted rooms",
-		description = "Display whitelisted rooms in green on the overlay. Separate with comma (full name)"
+			position = 5,
+			keyName = "averageCombatLevel",
+			name = "Show the average combat level",
+			description = "Show the average combat level of members inside the raid"
+	)
+	default boolean averageCombatLevel()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			position = 6,
+			keyName = "whitelistedRooms",
+			name = "Whitelisted rooms",
+			description = "Display whitelisted rooms in green on the overlay. Separate with comma (full name)"
 	)
 	default String whitelistedRooms()
 	{
@@ -98,10 +109,10 @@ public interface RaidsConfig extends Config
 	}
 
 	@ConfigItem(
-		position = 6,
-		keyName = "blacklistedRooms",
-		name = "Blacklisted rooms",
-		description = "Display blacklisted rooms in red on the overlay. Separate with comma (full name)"
+			position = 7,
+			keyName = "blacklistedRooms",
+			name = "Blacklisted rooms",
+			description = "Display blacklisted rooms in red on the overlay. Separate with comma (full name)"
 	)
 	default String blacklistedRooms()
 	{
@@ -109,10 +120,10 @@ public interface RaidsConfig extends Config
 	}
 
 	@ConfigItem(
-		position = 7,
-		keyName = "enableRotationWhitelist",
-		name = "Enable rotation whitelist",
-		description = "Enable the rotation whitelist"
+			position = 8,
+			keyName = "enableRotationWhitelist",
+			name = "Enable rotation whitelist",
+			description = "Enable the rotation whitelist"
 	)
 	default boolean enableRotationWhitelist()
 	{
@@ -120,10 +131,10 @@ public interface RaidsConfig extends Config
 	}
 
 	@ConfigItem(
-		position = 8,
-		keyName = "whitelistedRotations",
-		name = "Whitelisted rotations",
-		description = "Warn when boss rotation doesn't match a whitelisted one. Add rotations like [tekton, muttadile, guardians]"
+			position = 9,
+			keyName = "whitelistedRotations",
+			name = "Whitelisted rotations",
+			description = "Warn when boss rotation doesn't match a whitelisted one. Add rotations like [tekton, muttadile, guardians]"
 	)
 	default String whitelistedRotations()
 	{
@@ -131,10 +142,10 @@ public interface RaidsConfig extends Config
 	}
 
 	@ConfigItem(
-		position = 9,
-		keyName = "enableLayoutWhitelist",
-		name = "Enable layout whitelist",
-		description = "Enable the layout whitelist"
+			position = 10,
+			keyName = "enableLayoutWhitelist",
+			name = "Enable layout whitelist",
+			description = "Enable the layout whitelist"
 	)
 	default boolean enableLayoutWhitelist()
 	{
@@ -142,10 +153,10 @@ public interface RaidsConfig extends Config
 	}
 
 	@ConfigItem(
-		position = 10,
-		keyName = "whitelistedLayouts",
-		name = "Whitelisted layouts",
-		description = "Warn when layout doesn't match a whitelisted one. Add layouts like CFSCPPCSCF separated with comma"
+			position = 11,
+			keyName = "whitelistedLayouts",
+			name = "Whitelisted layouts",
+			description = "Warn when layout doesn't match a whitelisted one. Add layouts like CFSCPPCSCF separated with comma"
 	)
 	default String whitelistedLayouts()
 	{

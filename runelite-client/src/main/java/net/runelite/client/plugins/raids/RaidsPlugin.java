@@ -113,6 +113,8 @@ public class RaidsPlugin extends Plugin
 	@Inject
 	private RaidsPointsOverlay pointsOverlay;
 
+	@Inject RaidsCombatOverlay combatOverlay;
+
 	@Inject
 	private LayoutSolver layoutSolver;
 
@@ -148,6 +150,7 @@ public class RaidsPlugin extends Plugin
 	{
 		overlayManager.add(overlay);
 		overlayManager.add(pointsOverlay);
+		overlayManager.add(combatOverlay);
 
 		if (client.getGameState() == GameState.LOGGED_IN)
 		{
@@ -163,6 +166,7 @@ public class RaidsPlugin extends Plugin
 	{
 		overlayManager.remove(overlay);
 		overlayManager.remove(pointsOverlay);
+		overlayManager.remove(combatOverlay);
 
 		if (timer != null)
 		{
@@ -246,10 +250,12 @@ public class RaidsPlugin extends Plugin
 				raid.updateLayout(layout);
 				RotationSolver.solve(raid.getCombatRooms());
 				overlay.setScoutOverlayShown(true);
+				combatOverlay.setOverlayShown(true);
 			}
 			else if (!config.scoutOverlayAtBank())
 			{
 				overlay.setScoutOverlayShown(false);
+				combatOverlay.setOverlayShown(false);
 				raid = null;
 			}
 		}
@@ -257,6 +263,7 @@ public class RaidsPlugin extends Plugin
 		if (client.getVar(VarPlayer.IN_RAID_PARTY) == -1)
 		{
 			overlay.setScoutOverlayShown(false);
+			combatOverlay.setOverlayShown(false);
 			raid = null;
 		}
 	}
