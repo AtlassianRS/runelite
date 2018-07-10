@@ -8,6 +8,7 @@ import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.OverlayPriority;
 import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.ui.overlay.components.PanelComponent;
+import java.awt.Color;
 
 import javax.inject.Inject;
 import java.awt.*;
@@ -55,18 +56,24 @@ public class RaidsCombatOverlay extends Overlay{
             playerCount++;
             totalCombat += player.getCombatLevel();
 
-            averageCB = (averageCB + player.getCombatLevel()) / playerCount;
+            averageCB = ((double)totalCombat) / playerCount;
         }
+
+        Color textColor = Color.WHITE;
+
+        if(averageCB < 115)
+            textColor = Color.RED;
 
         panel.getChildren().clear();
         panel.getChildren().add(LineComponent.builder()
                 .left("AVG Combat:")
                 .right(String.format("%.1f", averageCB))
+                .rightColor(textColor)
                 .build());
 
         panel.getChildren().add(LineComponent.builder()
                 .left("Total Combat:")
-                .right(totalCombat + "")
+                .right(totalCombat+"")
                 .build());
 
         panel.getChildren().add(LineComponent.builder()
